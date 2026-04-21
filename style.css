@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(-45deg, #001f3f, #000814, #001d3d, #000000);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #e0e0e0;
+    line-height: 1.6;
+    min-height: 100vh;
+    transition: all 0.5s ease; /* Transisi halus untuk semua perubahan tema */
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header {
+    background-color: rgba(0, 29, 61, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo { font-weight: 600; font-size: 1.2rem; color: #00b4d8; }
+
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 20px; }
+nav ul li a { text-decoration: none; color: #fff; transition: 0.3s; }
+nav ul li a:hover { color: #00b4d8; }
+
+.hero { text-align: center; padding: 100px 20px; }
+
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 3px solid #00b4d8;
+    margin-bottom: 20px;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(0, 180, 216, 0.3);
+}
+
+h1 { font-size: 2.5rem; margin-bottom: 10px; color: #fff; }
+
+.btn-linkedin {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 30px;
+    background-color: #0077b5;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.4s;
+}
+
+.table-section { 
+    padding: 40px; 
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    margin: 50px auto; 
+    width: 90%; 
+    max-width: 900px;
+    border-radius: 20px; 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 18px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+th { color: #00b4d8; text-transform: uppercase; font-size: 0.8rem; }
+footer { text-align: center; padding: 40px; color: #555; font-size: 0.8rem; }
+
+/* --- LIGHT MODE SETTINGS --- */
+body.light-mode {
+    background: #f0f2f5;
+    background-size: 100% 100%;
+    animation: none;
+    color: #1a1a1a;
+}
+
+body.light-mode header {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode nav ul li a { color: #333; }
+body.light-mode .logo { color: #0077b5; }
+body.light-mode h1, body.light-mode h2 { color: #001d3d; }
+body.light-mode .table-section { background: rgba(0, 0, 0, 0.03); border-color: rgba(0,0,0,0.1); }
+body.light-mode td { color: #444; }
+body.light-mode footer p { color: #888; }
