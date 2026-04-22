@@ -11,3 +11,7 @@
 - Poin List lainnya
 
 `kode singkat` (Inline code)
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6b53667722a38bffbbd9cda7eb3e6ca3197dbcf1
