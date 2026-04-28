@@ -1,34 +1,25 @@
-// --- 1. Konfigurasi Data ---
 const namaMahasiswa = "Fadhla Rahayu Alfairuz";
 
-// --- 2. Popup Saat Website Dijalankan ---
-function selamatDatang() {
-    console.log("Sistem Portfolio Aktif!"); 
-    alert("Selamat datang di Website Portfolio, " + namaMahasiswa + "!"); 
-}
+// 1. Popup Selamat Datang saat web dibuka
+window.onload = () => {
+    alert("Selamat datang di Website Portfolio, " + namaMahasiswa + "!");
+};
 
-// Menjalankan popup segera setelah halaman dimuat
-window.onload = selamatDatang;
-
-// --- 3. Logika Utama (DOM Manipulation) ---
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // A. Fitur Ganti Tema (Dark/Light Mode)
+    // 2. Dark/Light Mode
     const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
-
     if (themeToggle) {
         themeToggle.addEventListener('click', (e) => {
             e.preventDefault();
-            body.classList.toggle('light-mode');
-            themeToggle.innerText = body.classList.contains('light-mode') ? "☀️ Mode" : "🌙 Mode";
+            document.body.classList.toggle('light-mode');
+            themeToggle.innerText = document.body.classList.contains('light-mode') ? "☀️ Mode" : "🌙 Mode";
         });
     }
 
-    // B. Popup Saat Klik Baris Jadwal (Sesuai keinginanmu)
+    // 3. Popup Klik Jadwal Mata Kuliah
     const rows = document.querySelectorAll('tbody tr');
     rows.forEach(row => {
-        row.style.cursor = "pointer"; // Agar kursor berubah jadi tangan
+        row.style.cursor = 'pointer';
         row.addEventListener('click', () => {
             const matkul = row.cells[1]?.innerText;
             if (matkul && matkul.trim() !== "") {
@@ -37,21 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // C. Fitur Konfirmasi LinkedIn pada Tombol
-    const tombol = document.querySelector('button');
-    if (tombol) {
-        tombol.addEventListener('click', function() {
-            let konfirmasi = confirm("Apakah kamu ingin melihat LinkedIn saya?");
-            if (konfirmasi) {
+    // 4. Konfirmasi LinkedIn (Tombol Submit)
+    const btnSubmit = document.querySelector('.btn-submit');
+    if (btnSubmit) {
+        btnSubmit.addEventListener('click', () => {
+            if (confirm("Apakah kamu ingin melihat LinkedIn saya?")) {
                 window.open("https://www.linkedin.com/in/fadhla-rahayu-alfairuz/", "_blank");
             }
         });
-    }
-
-    // D. Hover Efek pada Footer
-    const footerText = document.querySelector('footer p');
-    if (footerText) {
-        footerText.addEventListener('mouseover', () => footerText.style.color = "#00b4d8");
-        footerText.addEventListener('mouseout', () => footerText.style.color = "#555");
     }
 });
